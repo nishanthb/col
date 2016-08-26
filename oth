@@ -17,3 +17,43 @@
   OIDCCryptoPassphrase myowndomain
 
   OIDCRemoteUserClaim email
+
+
+
+
+<Directory "/var/www/html/mystuff">
+   AllowOverride None
+   Order allow,deny
+   Allow from al
+   AuthName "Welcome to fubar"
+   AuthType Basic
+   AuthBasicAuthoritative         Off
+   AuthUserFile              /some/path/htpasswd
+   AuthType openid-connect
+   Require valid-user
+
+</Directory>
+
+<Location /oauth2callback>
+AuthType openid-connect
+require valid-user
+</Location>
+
+
+
+<Directory "/var/www/html/foobar">
+
+    SetEnv TZ "US/Pacific"
+    Options ExecCGI
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+
+    AuthName "Welcome to fubar"
+    AuthType Basic
+    AuthBasicAuthoritative    Off
+    AuthUserFile              /some/path/htpasswd
+    AuthType openid-connect
+    Require valid-user
+
+</Directory>
