@@ -1,0 +1,19 @@
+  ServerName MyServername
+  OIDCProviderIssuer accounts.google.com
+  OIDCProviderAuthorizationEndpoint https://accounts.google.com/o/oauth2/auth
+  OIDCProviderTokenEndpoint https://accounts.google.com/o/oauth2/token
+  OIDCProviderTokenEndpointAuth client_secret_post
+  OIDCProviderUserInfoEndpoint https://www.googleapis.com/plus/v1/people/me/openIdConnect
+  OIDCProviderJwksUri https://www.googleapis.com/oauth2/v2/certs
+  OIDCCookiePath /
+
+  OIDCClientID 123xyz-abcdef123456o.apps.googleusercontent.com
+  OIDCClientSecret g00gl3-s3cr3t
+
+  OIDCAuthRequestParams hd=mydomain.com
+
+  OIDCScope "openid email profile"
+  OIDCRedirectURI http://mydomain.com/oauth2callback
+  OIDCCryptoPassphrase myowndomain
+
+  OIDCRemoteUserClaim email
